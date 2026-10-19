@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "ContextShift Ultimate",
+  "version": "0.4.0",
+  "description": "Local-first AI conversation capture, search, library, and handoff for ChatGPT, Claude, Gemini, Grok, and Perplexity.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://grok.com/*",
+    "https://perplexity.ai/*"
+  ],
+  "action": {
+    "default_title": "ContextShift Ultimate",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://grok.com/*",
+        "https://perplexity.ai/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

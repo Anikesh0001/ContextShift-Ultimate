@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ContextShift Ultimate</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><div class="eyebrow">LOCAL-FIRST AI TOOL</div><h1>ContextShift <span>Ultimate</span></h1><p>Capture, search, and move context between AI platforms.</p></header>
+<nav><button class="tab active" data-tab="library">Library</button><button class="tab" data-tab="handoff">Handoff</button><button class="tab" data-tab="privacy">Privacy</button></nav>
+<main>
+<section id="library" class="panel">
+  <div class="row"><h2>Saved conversations</h2><button id="exportAll" class="secondary">Export all</button></div>
+  <input id="search" type="search" placeholder="Search titles and messages…">
+  <div id="results" class="results"></div>
+  <p class="hint">Capture using the “Save context” button on a supported AI chat page. Check message counts; page extraction may be incomplete.</p>
+</section>
+<section id="handoff" class="panel hidden">
+  <h2>Build a handoff</h2>
+  <label for="conversation">Choose a saved conversation</label><select id="conversation"></select>
+  <label for="goal">What should the next AI do? (optional)</label><textarea id="goal" rows="3" placeholder="Continue debugging the project; preserve constraints and decisions…"></textarea>
+  <button id="buildHandoff" class="primary">Create handoff brief</button>
+  <textarea id="handoffText" rows="12" placeholder="Your reviewed handoff will appear here."></textarea>
+  <div class="row"><button id="copyHandoff" class="primary">Copy handoff</button><button id="downloadHandoff" class="secondary">Download .md</button></div>
+  <p class="hint">Nothing is automatically sent to another AI. Review the brief and paste it yourself.</p>
+</section>
+<section id="privacy" class="panel hidden">
+  <h2>Privacy controls</h2>
+  <p>Conversation records are stored in Chrome local extension storage. This prototype has no server endpoint, analytics, or remote code.</p>
+  <p>Conversation content can be sensitive. Do not capture secrets you do not want saved in this browser profile.</p>
+  <button id="clearAll" class="danger">Delete all saved conversations</button>
+  <p id="privacyStatus" class="hint" role="status"></p>
+</section>
+</main><script src="popup.js"></script></body></html>

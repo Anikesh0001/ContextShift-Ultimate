@@ -1,0 +1,9 @@
+#csu-capture-button {
+  position: fixed !important; right: 18px !important; bottom: 18px !important;
+  z-index: 2147483647 !important; border: 1px solid #b8c5ff !important;
+  border-radius: 999px !important; padding: 11px 16px !important;
+  background: #263b80 !important; color: white !important;
+  font: 600 13px/1.2 system-ui, sans-serif !important; cursor: pointer !important;
+  box-shadow: 0 4px 18px #0003 !important;
+}
+#csu-capture-button:disabled { opacity: .65 !important; cursor: wait !important; }
